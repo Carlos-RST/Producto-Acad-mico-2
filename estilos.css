@@ -1,3 +1,428 @@
+/* Estilos generales */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --text-color: #333;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+    padding: 1rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,0 100,0 100,100" fill="rgba(255,255,255,0.05)"/></svg>');
+    background-size: cover;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: var(--transition);
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a.active, 
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+.header-content {
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+/* Main content */
+main {
+    padding: 2rem 0;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--accent-color);
+}
+
+/* Bio section */
+.bio-content p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.motivation {
+    background: rgba(231, 76, 60, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.motivation h3 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Multimedia section */
+.multimedia-section {
+    margin-top: 1.5rem;
+}
+
+.multimedia-section h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.figure-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.figure-container figure {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.figure-container figure:hover {
+    transform: scale(1.03);
+}
+
+.multimedia-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.figure-container figure:hover .multimedia-img {
+    filter: brightness(1.1);
+}
+
+figcaption {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Image map */
+.image-map-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.map-image {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.areas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.map-area {
+    position: absolute;
+    background: rgba(231, 76, 60, 0.3);
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    backdrop-filter: blur(2px);
+}
+
+.map-area:hover {
+    background: rgba(231, 76, 60, 0.7);
+    transform: scale(1.15);
+}
+
+/* SVG section */
+.svg-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.custom-svg {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border-radius: 50%;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(52, 152, 219, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(52, 152, 219, 0); }
+}
+
+.custom-svg div:first-child {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Integration section */
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.discipline-card {
+    background: rgba(236, 240, 241, 0.5);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: var(--transition);
+    border-top: 3px solid var(--secondary-color);
+}
+
+.discipline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.discipline-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.discipline-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.discipline-list {
+    padding-left: 1.5rem;
+}
+
+.discipline-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Table and form section */
+.table-container {
+    margin-bottom: 2rem;
+}
+
+.responsive-table {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(236, 240, 241, 0.5);
+}
+
+tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.form-section {
+    background: rgba(236, 240, 241, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+
+**Archivo `index.html`**  
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +434,7 @@
     <title>Carlos Sucasaire - Portafolio Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -25,7 +450,7 @@
             </nav>
             <div class="header-content">
                 <div class="profile-container">
-                    <img src="Foto_Personal.jpg" alt="Carlos Sucasaire" class="profile-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&h=200&q=80" alt="Carlos Sucasaire" class="profile-img">
                 </div>
                 <h1>Carlos Romario Sucasaire Torres</h1>
                 <p class="subtitle">Químico | Estudiante de Ingeniería de Sistemas</p>
@@ -53,9 +478,10 @@
             </div>
         </section>
 
-        <!-- Sección Multimedia -->
+        <!-- Sección Multimedia - Para cumplir con la rúbrica -->
         <section class="card">
             <h2 class="section-title">Elementos Multimedia</h2>
+            
             <div class="multimedia-section">
                 <h3>Imágenes con figure y figcaption</h3>
                 <div class="figure-container">
@@ -119,9 +545,10 @@
             </div>
         </section>
 
-        <!-- Sección Tabla y Formulario -->
+        <!-- Sección Tabla y Formulario - Para cumplir con la rúbrica -->
         <section class="card">
             <h2 class="section-title">Habilidades y Formación</h2>
+            
             <div class="table-container">
                 <div class="responsive-table">
                     <table>
@@ -153,7 +580,7 @@
                                 <td>8 meses</td>
                             </tr>
                             <tr>
-                                <td>Bases de Datos</td>
+                                <td>Bases de Dados</td>
                                 <td>MySQL</td>
                                 <td>Básico</td>
                                 <td>6 meses</td>
@@ -205,7 +632,7 @@
             </div>
         </section>
 
-        <!-- Sección Previsualización -->
+        <!-- Sección Previsualización de nuevas páginas -->
         <section class="card preview-section">
             <h2 class="section-title">Explora mis páginas</h2>
             <div class="preview-grid">
@@ -243,28 +670,39 @@
             <h2 class="section-title">Contacto</h2>
             <div class="contact-grid">
                 <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <div>
                         <h3>Correo Institucional</h3>
                         <a href="mailto:csucasairet@unsa.edu.pe" class="contact-link">csucasairet@unsa.edu.pe</a>
                     </div>
                 </div>
+                
                 <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
                     <div>
                         <h3>Correo Institucional</h3>
                         <a href="mailto:70379386@continental.edu.pe" class="contact-link">70379386@continental.edu.pe</a>
                     </div>
                 </div>
+
                 <div class="contact-card">
-                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
                     <div>
                         <h3>Teléfono</h3>
                         <a href="tel:+51975192903" class="contact-link">+51 975 192 903</a>
                     </div>
                 </div>
+                
                 <div class="contact-card">
-                    <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
                     <div>
                         <h3>LinkedIn</h3>
                         <a href="#" class="contact-link">/carlossucasaire</a>
@@ -295,27 +733,30 @@
             alert('¡Gracias por tu mensaje! Te responderé lo antes posible.');
             this.reset();
         });
-
+        
         // Animaciones para las áreas del mapa de imagen
         document.querySelectorAll('.map-area').forEach(area => {
             area.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.15)';
                 this.style.backgroundColor = 'rgba(231, 76, 60, 0.7)';
             });
+            
             area.addEventListener('mouseleave', function() {
                 this.style.transform = 'scale(1)';
                 this.style.backgroundColor = 'rgba(231, 76, 60, 0.3)';
             });
+            
             area.addEventListener('click', function() {
                 alert(`Has seleccionado: ${this.textContent}`);
             });
         });
-
+        
         // Animación para las tarjetas de vista previa
         document.querySelectorAll('.preview-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px)';
             });
+            
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
