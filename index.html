@@ -9,7 +9,8 @@
     <title>Carlos Sucasaire - Portafolio Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="Estilos.css">
+    <link rel="stylesheet" href="Animaciones.css">
 </head>
 <body>
     <header>
@@ -17,9 +18,9 @@
             <nav>
                 <ul>
                     <li><a href="#" class="active">Inicio</a></li>
-                    <li><a href="proyectos.html">Proyectos</a></li>
-                    <li><a href="hobbies.html">Hobbies</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="Proyectos.html">Proyectos</a></li>
+                    <li><a href="Hobbies.html">Hobbies</a></li>
+                    <li><a href="Servicios.html">Servicios</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -57,21 +58,29 @@
         <section class="card">
             <h2 class="section-title">Elementos Multimedia</h2>
             <div class="multimedia-section">
-                <h3>Imágenes con figure y figcaption</h3>
+                <h3>Imágenes adaptativas con figure y figcaption</h3>
                 <div class="figure-container">
                     <figure>
-                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=400&q=80" alt="Laboratorio" class="multimedia-img">
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&h=300&q=80">
+                            <source media="(min-width: 601px)" srcset="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=400&q=80">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&h=400&q=80" alt="Laboratorio" class="multimedia-img">
+                        </picture>
                         <figcaption>Laboratorio de análisis químico</figcaption>
                     </figure>
                     <figure>
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&h=400&q=80" alt="Programación" class="multimedia-img">
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&h=300&q=80">
+                            <source media="(min-width: 601px)" srcset="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&h=400&q=80">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&h=400&q=80" alt="Programación" class="multimedia-img">
+                        </picture>
                         <figcaption>Desarrollo de software</figcaption>
                     </figure>
                 </div>
                 
                 <h3>Image Map Interactivo</h3>
                 <div class="image-map-container">
-                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&h=400&q=80" alt="Tecnologías" class="map-image">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&h=400&q=80" alt="Tecnologías" usemap="#tecnologias" class="map-image">
                     <div class="areas-container">
                         <div class="map-area" style="width: 120px; height: 120px; top: 50px; left: 150px;">HTML5</div>
                         <div class="map-area" style="width: 120px; height: 120px; top: 80px; left: 350px;">CSS3</div>
@@ -214,7 +223,7 @@
                     <div class="preview-content">
                         <h3>Mis Proyectos</h3>
                         <p>Descubre mis trabajos más destacados en química e ingeniería de sistemas, donde combino ambas disciplinas para crear soluciones innovadoras.</p>
-                        <a href="proyectos.html" class="preview-link">Ver proyectos <i class="fas fa-arrow-right"></i></a>
+                        <a href="Proyectos.html" class="preview-link">Ver proyectos <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -223,7 +232,7 @@
                     <div class="preview-content">
                         <h3>Mis Hobbies</h3>
                         <p>Conoce mis pasatiempos favoritos, desde juegos de estrategia como Age of Empires y Rome Total War hasta juegos móviles como Rise of Kingdoms.</p>
-                        <a href="hobbies.html" class="preview-link">Ver hobbies <i class="fas fa-arrow-right"></i></a>
+                        <a href="Hobbies.html" class="preview-link">Ver hobbies <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 
@@ -232,7 +241,7 @@
                     <div class="preview-content">
                         <h3>Servicios Profesionales</h3>
                         <p>Ofrezco servicios especializados que combinan mi experiencia en química con mis conocimientos en ingeniería de sistemas para soluciones integrales.</p>
-                        <a href="servicios.html" class="preview-link">Ver servicios <i class="fas fa-arrow-right"></i></a>
+                        <a href="Servicios.html" class="preview-link">Ver servicios <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -279,9 +288,9 @@
             <p>Carlos Sucasaire - Portafolio Profesional</p>
             <div class="footer-links">
                 <a href="index.html">Inicio</a>
-                <a href="proyectos.html">Proyectos</a>
-                <a href="hobbies.html">Hobbies</a>
-                <a href="servicios.html">Servicios</a>
+                <a href="Proyectos.html">Proyectos</a>
+                <a href="Hobbies.html">Hobbies</a>
+                <a href="Servicios.html">Servicios</a>
                 <a href="#contacto">Contacto</a>
             </div>
             <p class="copyright">© 2024 Todos los derechos reservados. Diseñado y desarrollado con HTML5, CSS3 y JavaScript.</p>
@@ -297,17 +306,16 @@
         });
 
         // Animaciones para las áreas del mapa de imagen
-        document.querySelectorAll('.map-area').forEach(area => {
+        document.querySelectorAll('map area').forEach(area => {
             area.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.15)';
-                this.style.backgroundColor = 'rgba(231, 76, 60, 0.7)';
+                this.style.opacity = '0.7';
             });
             area.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-                this.style.backgroundColor = 'rgba(231, 76, 60, 0.3)';
+                this.style.opacity = '1';
             });
-            area.addEventListener('click', function() {
-                alert(`Has seleccionado: ${this.textContent}`);
+            area.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert(`Has seleccionado: ${this.getAttribute('alt')}`);
             });
         });
 
